@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3etee1u252jv"]
+
+[ext_resource type="PackedScene" uid="uid://cbvqw8hwt8x5g" path="res://player/player.tscn" id="2_y0vat"]
+[ext_resource type="PackedScene" uid="uid://bwgbyqgxks331" path="res://enemies/panw.tscn" id="3_gbi6y"]
+
+[node name="PlayerTests" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_y0vat")]
+position = Vector2(443, 270)
+
+[node name="panw2" parent="." instance=ExtResource("3_gbi6y")]
+position = Vector2(257, 280)
+
+[node name="panw3" parent="." instance=ExtResource("3_gbi6y")]
+position = Vector2(458, 428)
+
+[node name="panw" parent="." instance=ExtResource("3_gbi6y")]
+position = Vector2(625, 245)
