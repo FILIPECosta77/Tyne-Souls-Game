@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://cwlf6aaacmpoq"]
+
+[ext_resource type="Script" path="res://drops/gold/colectedGold.gd" id="1_ull2i"]
+[ext_resource type="Texture2D" uid="uid://dhjnd207uov8j" path="res://addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="2_o2gpj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8knhu"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5m16"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gx5e"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb4oj"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xujky"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snin3"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tyih"]
+atlas = ExtResource("2_o2gpj")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4l36"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8knhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5m16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gx5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb4oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xujky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snin3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tyih")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqhu6"]
+radius = 26.0
+
+[node name="Gold" type="Sprite2D"]
+scale = Vector2(0.960264, 0.960264)
+script = ExtResource("1_ull2i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.849893, 0.849893)
+sprite_frames = SubResource("SpriteFrames_p4l36")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[node name="colectedArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="colectedArea"]
+position = Vector2(2, 11)
+shape = SubResource("CircleShape2D_hqhu6")
